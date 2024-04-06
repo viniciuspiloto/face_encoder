@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "face-encoder"
+version = "0.1.0"
+description = ""
+authors = ["Vinicius Amaro <vpilotoamaro@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.1"
+python-multipart = "^0.0.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
