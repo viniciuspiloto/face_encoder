@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  face-encoder-app:
+    build:
+      context: ./
+      dockerfile: ./face_encoder/Dockerfile
+    env_file: .env
+    ports:
+      - "8001:8000"
+
+  face-encoding:
+    image: veriffdocker/face-encoding-test-task:latest
+    ports:
+      - "8000:8000"
+  
+  postgresql:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: face_encoding_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
