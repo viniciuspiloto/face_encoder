@@ -1,5 +1,6 @@
 from datetime import datetime
-from typing import List, Optional, Dict
+from typing import Dict, List, Optional
+
 from pydantic import BaseModel
 from sqlalchemy import JSON, Column
 from sqlmodel import Field, SQLModel
@@ -15,7 +16,7 @@ class FaceEncoderSession(SQLModel, table=True):
         title="Face Encoding", default_factory=dict, sa_column=Column(JSON)
     )
     created_at: datetime = Field(
-        title="Timestamp of session creation", default_factory=datetime.now()
+        title="Timestamp of session creation", default_factory=datetime.now
     )
 
     class Config:
@@ -31,17 +32,8 @@ class FaceEncoderUserSessions(SQLModel, table=True):
     session_id: str = Field(title="Session ID", primary_key=True)
     user_id: str = Field(title="User ID", index=True)
     created_at: datetime = Field(
-        title="Timestamp of session creation", default_factory=datetime.now()
+        title="Timestamp of session creation", default_factory=datetime.now
     )
     closed_at: Optional[datetime] = Field(
         title="Timestamp of session close", default=None
-    )
-
-
-class FaceEncoderSessionSummary(BaseModel):
-    """Face Encoder Session Summary Model"""
-
-    session_id: str = Field(title="Session ID")
-    all_face_encodings: Optional[List[List]] = Field(
-        title="List of all face Encodings", default_factory=list
     )

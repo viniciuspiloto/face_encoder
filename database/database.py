@@ -19,14 +19,21 @@ class FaceEncoderDB:
         self.engine = create_engine(db_config.get_url(), echo=True)
 
     def create_db_and_tables(self) -> None:
+        """Creates the database and tables"""
         logger.info("Creating database and tables")
         SQLModel.metadata.create_all(self.engine, checkfirst=True)
 
     def drop_db_and_tables(self) -> None:
+        """Drop the database and tables"""
         logger.info("Dropping database and tables")
         SQLModel.metadata.drop_all(self.engine)
 
     @contextmanager
     def get_session(self):
+        """Get a session
+
+        Yields:
+            Session: Session object
+        """
         with Session(self.engine) as session:
             yield session
