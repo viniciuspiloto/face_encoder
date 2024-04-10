@@ -19,7 +19,7 @@ class FaceEncoderCRUD(FaceEncoderDB):
         self,
         session_id: str,
         face_encodings: Dict = None,
-    ):
+    ) -> None:
         """Add a session and face encodings to the database
 
         Args:

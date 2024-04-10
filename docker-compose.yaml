@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   face-encoder-app:
+    image: face-encoder-app:latest
     build:
       context: ./
       dockerfile: ./face_encoder/Dockerfile

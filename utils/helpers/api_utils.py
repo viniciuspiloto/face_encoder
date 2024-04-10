@@ -1,4 +1,4 @@
-import requests
+import httpx
 
 
 def build_api_url(endpoint: str, host: str = "localhost", port: int = 8000) -> str:
@@ -15,13 +15,13 @@ def build_api_url(endpoint: str, host: str = "localhost", port: int = 8000) -> s
     return f"http://{host}:{port}/{endpoint}"
 
 
-def send_request_to_face_encoding(
+async def send_request_to_face_encoding(
     endpoint: str = "v1/selfie",
     host: str = "face-encoding",
     port: int = 8000,
     contents: bytes = None,
     timeout: int = 60,
-) -> requests.Response:
+) -> httpx.Response:
     """Send a request to the face-encoding service
 
     Args:
@@ -30,18 +30,17 @@ def send_request_to_face_encoding(
         port (int, optional): Port of the face-encoding service. Defaults to 8000.
         timeout (int, optional): Timeout of the request. Defaults to 60.
 
-    Raises:
-        requests.exceptions.RequestException: Error connecting to face-encoding service
-
     Returns:
-        requests.Response: Response from the face-encoding service
+        httpx.Response: Response from the face-encoding service
     """
-    try:
-        return requests.post(
-            build_api_url(endpoint, host, port),
-            files={"file": contents},
-            timeout=timeout,
-        )
-    except requests.exceptions.RequestException as e:
-        error_message = f"Error connecting to face-encoding service: {str(e)}"
-        raise requests.exceptions.RequestException(error_message) from e
+    async with httpx.AsyncClient() as client:
+        try:
+            return await client.post(
+                build_api_url(endpoint, host, port),
+                files={"file": httpx.AsyncByteStream(contents)},
+                timeout=timeout,
+            )
+        except httpx.HTTPError as e:
+            raise httpx.HTTPError(
+                f"Error connecting to face-encoding service: {str(e)}"
+            ) from e
