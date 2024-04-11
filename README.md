@@ -11,6 +11,7 @@ The Face Encoder project is a FastAPI-based service that allows users to upload 
 ## File Structure
 - `face_encoder`: Contains the main application code
 - `database`: Contains the database code
+- `docs`: Contains the documentation
 - `utils`: Contains the utility code
 - `k8`: Contains the Kubernetes manifests
 - `tests`: Contains the test code
@@ -22,6 +23,7 @@ The Face Encoder project is a FastAPI-based service that allows users to upload 
 │   ├── database.py
 │   └── models.py
 ├── docker-compose.yaml
+├── docs
 ├── face_encoder
 │   ├── app
 │   │   └── app.py

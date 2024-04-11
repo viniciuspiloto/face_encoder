@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>database package &#8212; Face Encoder  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="database-package">
+<h1>database package<a class="headerlink" href="#database-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-database.config">
+<span id="database-config-module"></span><h2>database.config module<a class="headerlink" href="#module-database.config" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database.config.FaceEncoderDBConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.config.</span></span><span class="sig-name descname"><span class="pre">FaceEncoderDBConfig</span></span><a class="headerlink" href="#database.config.FaceEncoderDBConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Database Configuration Class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database.config.FaceEncoderDBConfig.get_url">
+<span class="sig-name descname"><span class="pre">get_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.config.FaceEncoderDBConfig.get_url" title="Link to this definition">¶</a></dt>
+<dd><p>Get the database URL</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-database.crud">
+<span id="database-crud-module"></span><h2>database.crud module<a class="headerlink" href="#module-database.crud" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.crud.</span></span><span class="sig-name descname"><span class="pre">FaceEncoderCRUD</span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#database.database.FaceEncoderDB" title="database.database.FaceEncoderDB"><code class="xref py py-class docutils literal notranslate"><span class="pre">FaceEncoderDB</span></code></a></p>
+<p>Face Encoder CRUD Class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.add_session">
+<span class="sig-name descname"><span class="pre">add_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_encodings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.add_session" title="Link to this definition">¶</a></dt>
+<dd><p>Add a session and face encodings to the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>session_id (str): The session ID to be added.
+face_encodings (Dict, optional): The face encodings to be added. Defaults to None.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to add session to database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.add_user_session">
+<span class="sig-name descname"><span class="pre">add_user_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.add_user_session" title="Link to this definition">¶</a></dt>
+<dd><p>Add a user session to the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>session_id (str): The session ID to be added.
+user_id (str): The user ID to be added.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to add user session to database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.check_if_session_exists">
+<span class="sig-name descname"><span class="pre">check_if_session_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.check_if_session_exists" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the session exists in the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>session_id (str): The session ID.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to check if session exists in database</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if the session exists, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.close_user_session">
+<span class="sig-name descname"><span class="pre">close_user_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.close_user_session" title="Link to this definition">¶</a></dt>
+<dd><p>Close the user session in the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user_id (str): The user ID.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to close user session in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.get_session_count">
+<span class="sig-name descname"><span class="pre">get_session_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.get_session_count" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of sessions in the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>session_id (str): The session ID.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to get session count from database</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: The number of session entries in the database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.get_session_summary">
+<span class="sig-name descname"><span class="pre">get_session_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="utils.schema.html#utils.schema.face_encoder_schema.FaceEncoderSessionSummary" title="utils.schema.face_encoder_schema.FaceEncoderSessionSummary"><span class="pre">FaceEncoderSessionSummary</span></a></span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.get_session_summary" title="Link to this definition">¶</a></dt>
+<dd><p>Get the session summary from the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>session_id (str): The session ID.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to get session summary from database</p>
+</dd>
+<dt>Returns:</dt><dd><p>FaceEncoderSessionSummary: The session summary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.get_user_oppened_sessions">
+<span class="sig-name descname"><span class="pre">get_user_oppened_sessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#database.models.FaceEncoderUserSessions" title="database.models.FaceEncoderUserSessions"><span class="pre">FaceEncoderUserSessions</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.get_user_oppened_sessions" title="Link to this definition">¶</a></dt>
+<dd><p>Get the user opened sessions from the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user_id (str): The user ID.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to get user sessions from database</p>
+</dd>
+<dt>Returns:</dt><dd><p>List[FaceEncoderUserSessions]: The user sessions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.crud.FaceEncoderCRUD.get_user_session">
+<span class="sig-name descname"><span class="pre">get_user_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#database.models.FaceEncoderUserSessions" title="database.models.FaceEncoderUserSessions"><span class="pre">FaceEncoderUserSessions</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#database.crud.FaceEncoderCRUD.get_user_session" title="Link to this definition">¶</a></dt>
+<dd><p>Get the user sessions from the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user_id (str): The user ID.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Failed to get user sessions from database</p>
+</dd>
+<dt>Returns:</dt><dd><p>List[FaceEncoderUserSessions]: The user sessions</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-database.database">
+<span id="database-database-module"></span><h2>database.database module<a class="headerlink" href="#module-database.database" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database.database.FaceEncoderDB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.database.</span></span><span class="sig-name descname"><span class="pre">FaceEncoderDB</span></span><a class="headerlink" href="#database.database.FaceEncoderDB" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Face Encoder Database Class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database.database.FaceEncoderDB.create_db_and_tables">
+<span class="sig-name descname"><span class="pre">create_db_and_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#database.database.FaceEncoderDB.create_db_and_tables" title="Link to this definition">¶</a></dt>
+<dd><p>Creates the database and tables</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.database.FaceEncoderDB.drop_db_and_tables">
+<span class="sig-name descname"><span class="pre">drop_db_and_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#database.database.FaceEncoderDB.drop_db_and_tables" title="Link to this definition">¶</a></dt>
+<dd><p>Drop the database and tables</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database.database.FaceEncoderDB.get_session">
+<span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.database.FaceEncoderDB.get_session" title="Link to this definition">¶</a></dt>
+<dd><p>Get a session</p>
+<dl class="simple">
+<dt>Yields:</dt><dd><p>Session: Session object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-database.models">
+<span id="database-models-module"></span><h2>database.models module<a class="headerlink" href="#module-database.models" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.models.</span></span><span class="sig-name descname"><span class="pre">FaceEncoderSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.models.FaceEncoderSession" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SQLModel</span></code></p>
+<p>Face Encoder Session Model</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Config</span></span><a class="headerlink" href="#database.models.FaceEncoderSession.Config" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class configuration</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.Config.arbitrary_types_allowed">
+<span class="sig-name descname"><span class="pre">arbitrary_types_allowed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.Config.arbitrary_types_allowed" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.face_encoding">
+<span class="sig-name descname"><span class="pre">face_encoding</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.face_encoding" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.model_computed_fields" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'arbitrary_types_allowed':</span> <span class="pre">True,</span> <span class="pre">'from_attributes':</span> <span class="pre">True,</span> <span class="pre">'read_from_attributes':</span> <span class="pre">True,</span> <span class="pre">'read_with_orm_mode':</span> <span class="pre">True,</span> <span class="pre">'registry':</span> <span class="pre">PydanticUndefined,</span> <span class="pre">'table':</span> <span class="pre">True}</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'created_at':</span> <span class="pre">FieldInfo(annotation=datetime,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=builtin_function_or_method,</span> <span class="pre">title='Timestamp</span> <span class="pre">of</span> <span class="pre">session</span> <span class="pre">creation'),</span> <span class="pre">'face_encoding':</span> <span class="pre">FieldInfo(annotation=Union[Dict,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default_factory=dict,</span> <span class="pre">title='Face</span> <span class="pre">Encoding'),</span> <span class="pre">'id':</span> <span class="pre">FieldInfo(annotation=Union[int,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">title='ID'),</span> <span class="pre">'session_id':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True,</span> <span class="pre">title='Session</span> <span class="pre">ID')}</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.model_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderSession.session_id">
+<span class="sig-name descname"><span class="pre">session_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#database.models.FaceEncoderSession.session_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.models.</span></span><span class="sig-name descname"><span class="pre">FaceEncoderUserSessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.models.FaceEncoderUserSessions" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SQLModel</span></code></p>
+<p>Face Encoder User Sessions Model</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.closed_at">
+<span class="sig-name descname"><span class="pre">closed_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.closed_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.model_computed_fields" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'from_attributes':</span> <span class="pre">True,</span> <span class="pre">'read_from_attributes':</span> <span class="pre">True,</span> <span class="pre">'read_with_orm_mode':</span> <span class="pre">True,</span> <span class="pre">'registry':</span> <span class="pre">PydanticUndefined,</span> <span class="pre">'table':</span> <span class="pre">True}</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'closed_at':</span> <span class="pre">FieldInfo(annotation=Union[datetime,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">title='Timestamp</span> <span class="pre">of</span> <span class="pre">session</span> <span class="pre">close'),</span> <span class="pre">'created_at':</span> <span class="pre">FieldInfo(annotation=datetime,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=builtin_function_or_method,</span> <span class="pre">title='Timestamp</span> <span class="pre">of</span> <span class="pre">session</span> <span class="pre">creation'),</span> <span class="pre">'session_id':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True,</span> <span class="pre">title='Session</span> <span class="pre">ID'),</span> <span class="pre">'user_id':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True,</span> <span class="pre">title='User</span> <span class="pre">ID')}</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.model_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.session_id">
+<span class="sig-name descname"><span class="pre">session_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.session_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="database.models.FaceEncoderUserSessions.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#database.models.FaceEncoderUserSessions.user_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-database">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-database" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Face Encoder</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Vinicius Amaro.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/database.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

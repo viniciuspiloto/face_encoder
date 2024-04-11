@@ -7,6 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+sphinx = "^7.2.6"
+sphinx-rtd-theme = "^2.0.0"
 
 
 [tool.poetry.group.face_encoder.dependencies]
