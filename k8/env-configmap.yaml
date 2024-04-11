@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  DB_HOST: postgresql
+  DB_NAME: face_encoding_db
+  DB_PASSWORD: root
+  DB_PORT: "5432"
+  DB_USER: root
+  MAX_FILE_SIZE: "2000000"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: face-encoder-app-env
+  name: env

@@ -9,6 +9,9 @@ services:
     env_file: .env
     ports:
       - "8001:8000"
+    depends_on:
+      - postgresql
+      - face-encoding
 
   face-encoding:
     image: veriffdocker/face-encoding-test-task:latest

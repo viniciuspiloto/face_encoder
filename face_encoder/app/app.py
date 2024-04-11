@@ -122,7 +122,7 @@ async def upload(session_id: str, file: UploadFile = File(...)) -> JSONResponse:
         return JSONResponse(content={"message": str(e)}, status_code=500)
 
 
-@app.get("/session_summary/{session_id}")
+@app.get("/session_summary")
 async def session_summary(session_id: str) -> FaceEncoderSessionSummary:
     """Get the session summary
 
