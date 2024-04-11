@@ -34,4 +34,4 @@ You can test the application with Swagger by openning http://localhost:8001/docs
 - Session caching for better performance. (Redis)
 
 ## Contributors
-- Vinicius Amaro <vpilotoamaro@gmail.com>
+- Vinicius Amaro
