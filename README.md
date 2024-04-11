@@ -8,6 +8,42 @@ The Face Encoder project is a FastAPI-based service that allows users to upload 
 - Docker
 - Docker Compose
 
+## File Structure
+- `face_encoder`: Contains the main application code
+- `database`: Contains the database code
+- `utils`: Contains the utility code
+- `k8`: Contains the Kubernetes manifests
+- `tests`: Contains the test code
+
+```
+├── database
+│   ├── config.py
+│   ├── crud.py
+│   ├── database.py
+│   └── models.py
+├── docker-compose.yaml
+├── face_encoder
+│   ├── app
+│   │   └── app.py
+│   ├── Dockerfile
+│   └── __main__.py
+├── k8
+│   ├── env-configmap.yaml
+│   ├── face_encoder_app
+│   │   ├── face-encoder-app-deployment.yaml
+│   │   └── face-encoder-app-service.yaml
+│   ├── face_encoding
+│   │   ├── face-encoding-deployment.yaml
+│   │   └── face-encoding-service.yaml
+│   ├── postgresql
+│   │   ├── postgresql-deployment.yaml
+│   │   └── postgresql-service.yaml
+│   └── README.md
+├── poetry.lock
+├── pyproject.toml
+├── README.md
+```
+
 ## Installation
 1. Clone the repository
 2. Set up the environment variables in a `.env` file. You can use the `env.template` file
